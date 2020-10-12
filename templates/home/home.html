@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!--  References
+https://www.w3schools.com/css/css_rwd_intro.asp
+https://www.w3schools.com/css/css_rwd_templates.asp
+https://www.w3schools.com/w3css/w3css_icons.asp
+-->
+
+{% include 'home/home_head_section.html' %}
+
+<body class="w3-content" style="max-width:1200px">
+
+    {% include 'home/home_slidebar.html' %}
+
+    <!-- Top menu on small screens -->
+    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+        <div class="w3-bar-item w3-padding-24 w3-wide">A&E</div>
+        <!--LOGO in Small Device-->
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()">
+            <i class="fa fa-bars"></i></a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor: pointer; display: none;" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:250px">
+        <!-- Top header -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+        <header class="w3-container w3-row">
+            <div class="w3-col search-box s3 w5 l7">
+                <input class="search-txt" type="text" name="" placeholder="Search Items...">
+                <a class="search-btn" href="#">
+                    <i class="fa fa-search"></i>
+                </a>
+            </div>
+            <div class="w3-col w3-xlarge add-to-cart s1 w1 l1"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> </div>
+        </header>
+
+        {% load static %}
+        <!-- Image header -->
+        <div class="w3-display-container w3-container">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="{% static 'images/SamsungMobile1.jpg' %}" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="{% static 'images/SamsungMobile2.jpg' %}" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="{% static 'images/SamsungMobile3.jpg' %}" style="width:100%">
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <!--
+                <img src="images/jeans.jpg" alt="Jeans" style="width:100%">
+                <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+                <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+                <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+                <h1 class="w3-hide-small">COLLECTION 2016</h1>
+                <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+            </div>
+        -->
+        </div>
+
+        <!---->
+        {% include 'home/home_products.html' %} {% include 'home/home_footer.html' %}
+
+</body>
+
+</html>
